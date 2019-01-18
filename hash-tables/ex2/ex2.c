@@ -29,6 +29,7 @@ char **reconstruct_trip(Ticket **tickets, int length)
   for (int x = 0; x < length; x++){
     free(tickets[x]);
   }
+  free(tickets);
 
   return route;
 }

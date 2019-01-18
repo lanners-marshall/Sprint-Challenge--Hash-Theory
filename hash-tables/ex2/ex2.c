@@ -15,14 +15,13 @@ char **reconstruct_trip(Ticket **tickets, int length)
   }
 
   //start
-  char *current = hash_table_retrieve(ht, "NONE");
-  char *next;
-  route[0] = current;
+  char *holder = "NONE";
+  char *current;
 
-  for (int j = 1; j < length; j++){
-    next = current;
-    current = hash_table_retrieve(ht, route[j - 1]);
+  for (int j = 0; j < length; j++){
+    current = hash_table_retrieve(ht, holder);
     route[j] = current;
+    holder = current;
   }
 
   return route;

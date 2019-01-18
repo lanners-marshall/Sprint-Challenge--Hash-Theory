@@ -1,6 +1,5 @@
-DEBUG tests/ex2_tests.c:106: ----- RUNNING: ./tests/ex2_tests
-DEBUG tests/ex2_tests.c:100: 
+DEBUG tests/ex2_tests.c:102: ----- RUNNING: ./tests/ex2_tests
+DEBUG tests/ex2_tests.c:96: 
 ----- test_short_case
-DEBUG tests/ex2_tests.c:101: 
+DEBUG tests/ex2_tests.c:97: 
 ----- test_long_case
-[ERROR] (tests/ex2_tests.c:91: errno: None) Your function did not return the expected output

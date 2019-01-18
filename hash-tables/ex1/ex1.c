@@ -5,12 +5,20 @@
 
 Answer *get_indices_of_item_weights(int *weights, int length, int limit)
 {
-  HashTable *ht = create_hash_table(16);
-
-  // YOUR CODE HERE
+  for (int i = 0; i < length; i++){
+    for (int j = 0; j < length; j++){
+      if (weights[i] +  weights[j] == limit && i != j && j < i){      
+        Answer *pair = malloc(sizeof(Answer));
+        pair->index_1 = i;
+        pair->index_2 = j;
+        return pair;
+      }   
+    }
+  }
 
   return NULL;
 }
+
 
 void print_answer(Answer *answer)
 {
@@ -30,7 +38,7 @@ int main(void)
   Answer *answer_1 = get_indices_of_item_weights(&weights_1, 1, 9);
   print_answer(answer_1);  // NULL
 
-  // TEST 2
+  // // TEST 2
   int weights_2[] = {4, 4};
   Answer* answer_2 = get_indices_of_item_weights(weights_2, 2, 8);
   print_answer(answer_2);  // {1, 0}

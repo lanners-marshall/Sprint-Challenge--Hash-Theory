@@ -24,6 +24,12 @@ char **reconstruct_trip(Ticket **tickets, int length)
     holder = current;
   }
 
+  destroy_hash_table(ht);
+
+  for (int x = 0; x < length; x++){
+    free(tickets[x]);
+  }
+
   return route;
 }
 
